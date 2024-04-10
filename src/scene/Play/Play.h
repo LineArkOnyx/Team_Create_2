@@ -1,5 +1,6 @@
 #pragma once
 #include "DxLib.h"
+#include "Player/Player.h"
 
 class Play
 {
@@ -11,5 +12,5 @@ public:
 	void DrawPlay();
 	void FinPlay();
 private:
-
+	Player player;
 };
