@@ -1,9 +1,14 @@
 //ウィンドウを表示するプログラム（ひな形）
 
 #include "DxLib.h"	//DXライブラリのインクルード
+#include "Input/Input.h"
+#include "scene/scene.h"
+#include "scene/Title/Title.h"
+#include "scene/Play/Play.h"
+#include "scene/Result/Result.h"
 
-
-
+#define SCREEN_SIZE_X 640
+#define SCREEN_SIZE_Y 480
 
 //設定フレームレート (60FPS)
 #define FRAME_RATE (60)
@@ -49,11 +54,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	//-----------------------------------------
 	//一番最初に１回だけやる処理をここに書く
-	Play play;
 	Title title;
+	Play play;
 	Result result;
-	int P1SCORE = 0;
-	int P2SCORE = 0;
+
+	sceneID = SCENE_INIT_TITLE;
+	
 	//入力制御初期化
 	InitInput();
 
@@ -106,13 +112,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			case SCENE_INIT_TITLE:
 			{
 				title.InitTitle();
+
 				sceneID = SCENE_LOOP_TITLE;
 			}
 				break;
 
 			case SCENE_LOOP_TITLE:
 			{
+				title.StepTitle();
+
 				title.DrawTitle();
+
 				if (CheckHitKey(KEY_INPUT_RETURN)) {
 					sceneID = SCENE_FIN_TITLE;
 				}
@@ -122,17 +132,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			case SCENE_FIN_TITLE:
 			{
 				title.FinTitle();
-				sceneID = SCENE_INIT_PLAY;
 
+				sceneID = SCENE_INIT_PLAY;
 			}
 				break;
 
 			case SCENE_INIT_PLAY:
 			{
-				
 				play.InitPlay();
 				
-
 				sceneID = SCENE_LOOP_PLAY;
 			}
 				break;
@@ -143,16 +151,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 				play.DrawPlay();
 
-				play.ScoreCalculation();
-
-				play.StageLineCollision();
+				if (CheckHitKey(KEY_INPUT_RETURN)) {
+					sceneID = SCENE_FIN_PLAY;
+				}
 			}
 				break;
 
 			case SCENE_FIN_PLAY:
 			{
-				P1SCORE = Player1Score;
-				P2SCORE = Player2Score;
+				play.FinPlay();
+
 				sceneID = SCENE_INIT_RESULT;
 			}
 				break;
@@ -160,13 +168,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			case SCENE_INIT_RESULT:
 			{
 				result.InitResult();
+
 				sceneID = SCENE_LOOP_RESULT;
 			}
 				break;
 
 			case SCENE_LOOP_RESULT:
 			{
+				result.StepResult();
+
 				result.DrawResult();
+
 				if (CheckHitKey(KEY_INPUT_RETURN)) {
 					sceneID = SCENE_FIN_RESULT;
 				}
@@ -176,6 +188,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			case SCENE_FIN_RESULT:
 			{
 				result.FinResult();
+
 				sceneID = SCENE_INIT_TITLE;
 			}
 				break;
