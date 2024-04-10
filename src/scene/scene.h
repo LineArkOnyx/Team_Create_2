@@ -19,5 +19,5 @@ enum SCENE_ID
 
 };
 
-extern SCENE_ID sceneID;
+extern SCENE_ID sceneID = SCENE_INIT_TITLE;
 
