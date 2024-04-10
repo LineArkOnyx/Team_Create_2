@@ -1,7 +1,5 @@
 //éˆã∆Ç≈çÏÇ¡ÇΩÇ‡ÇÃ
 #include"My_Math.h"
-#include <math.h>
-#include"DxLib.h"
 
 VECTOR MyMath::VecCreate(VECTOR start, VECTOR end)
 {

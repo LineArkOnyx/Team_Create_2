@@ -1,4 +1,5 @@
 #pragma once
+#include "DxLib.h"
 
 enum SCENE_ID
 {
@@ -19,5 +20,4 @@ enum SCENE_ID
 
 };
 
-extern SCENE_ID sceneID = SCENE_INIT_TITLE;
 

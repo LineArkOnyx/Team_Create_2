@@ -2,6 +2,9 @@
 #ifndef __COLLISION_H__
 #define __COLLISION_H__
 
+#include <math.h>
+#include "DxLib.h"
+#include"../My_Math/My_Math.h"
 class Collision
 {
 public:

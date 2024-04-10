@@ -1,9 +1,6 @@
 //‰~‚Æü‚Ì“–‚½‚è”»’è»ì:–ì“c
 //‚»‚êˆÈŠO‚Íö‹Æ‚Åì‚Á‚½‚à‚Ì
-#include <math.h>
 #include "Collision.h"
-#include "DxLib.h"
-#include"../My_Math/My_Math.h"
 
 //IsHitRect‚Ì’è‹`
 bool Collision::IsHitRect(int n1_x, int n1_y, int n1_w, int n1_h, int n2_x, int n2_y, int n2_w, int n2_h) {

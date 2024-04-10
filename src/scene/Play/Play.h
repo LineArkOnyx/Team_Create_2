@@ -1,7 +1,5 @@
 #pragma once
-#include <stdio.h>
 #include "DxLib.h"
-#include "../../Common.h"
 
 class Play
 {

@@ -1,12 +1,16 @@
 //ウィンドウを表示するプログラム（ひな形）
 
 #include "DxLib.h"	//DXライブラリのインクルード
-#include <stdio.h>
 #include "Input/Input.h"
 #include "scene/scene.h"
 #include "scene/Title/Title.h"
 #include "scene/Play/Play.h"
 #include "scene/Result/Result.h"
+
+#define	SCREEN_SIZE_X	1080	// X方向の画面サイズを指定
+#define	SCREEN_SIZE_Y	720	// Y方向の画面サイズを指定
+
+SCENE_ID sceneID;
 
 //設定フレームレート (60FPS)
 #define FRAME_RATE (60)
