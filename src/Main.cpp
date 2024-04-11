@@ -7,6 +7,7 @@
 #include "scene/Title/Title.h"
 #include "scene/Play/Play.h"
 #include "scene/Result/Result.h"
+#include"scene/Enemy/Enemy.h"
 
 
 
@@ -141,8 +142,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 			case SCENE_INIT_PLAY:
 			{
+
 				play.InitPlay();
-				
+				enemy.InitEnemy();
 				sceneID = SCENE_LOOP_PLAY;
 			}
 				break;
@@ -150,7 +152,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			case SCENE_LOOP_PLAY:
 			{
 				play.StepPlay();
-
+				//‰º•`‰æ
 				play.DrawPlay();
 
 				if (IsKeyPush(KEY_INPUT_SPACE)) {

@@ -1,5 +1,5 @@
 #include "Play.h"
-
+#include "../../Collision/Collision.h"
 
 Play::Play()
 {
@@ -28,4 +28,9 @@ void Play::DrawPlay()
 void Play::FinPlay()
 {
 	player.FinPlayer();
+}
+
+void Play::EnemyHitHammer()
+{
+	/*Collision::IsHitRect()*/
 }

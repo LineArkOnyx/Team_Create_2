@@ -12,6 +12,9 @@ public:
 	void StepPlay();
 	void DrawPlay();
 	void FinPlay();
+
+	//
+	void EnemyHitHammer();
 private:
 	Player player;
 };

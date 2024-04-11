@@ -10,7 +10,6 @@ public:
 	void StepPlayer();
 	void DrawPlayer();
 	void FinPlayer();
-
 	bool GetPlayerAttack();	//叩くフラグを取得
 	int GetPlayerPosX();	//座標取得
 	int GetPlayerPosY();	//座標取得
