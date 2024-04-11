@@ -125,7 +125,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 				title.DrawTitle();
 
-				if (CheckHitKey(KEY_INPUT_RETURN)) {
+				if (IsKeyPush(KEY_INPUT_SPACE)) {
 					sceneID = SCENE_FIN_TITLE;
 				}
 			}
@@ -153,7 +153,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 				play.DrawPlay();
 
-				if (CheckHitKey(KEY_INPUT_RETURN)) {
+				if (IsKeyPush(KEY_INPUT_SPACE)) {
 					sceneID = SCENE_FIN_PLAY;
 				}
 			}
@@ -181,7 +181,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 				result.DrawResult();
 
-				if (CheckHitKey(KEY_INPUT_RETURN)) {
+				if (IsKeyPush(KEY_INPUT_SPACE)) {
 					sceneID = SCENE_FIN_RESULT;
 				}
 			}

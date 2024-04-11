@@ -21,6 +21,9 @@ void Player::InitPlayer()
 }
 void Player::StepPlayer()
 {
+
+	CurrentClickFlg = NextClickFlg;	//カレントを更新
+
 	GetMousePoint(&PlayerPosX, &PlayerPosY);//マウスポインタの位置にプレイヤー配置
 
 	NextClickFlg = GetMouseInput() & MOUSE_INPUT_LEFT;//左クリックを検知
@@ -31,7 +34,6 @@ void Player::StepPlayer()
 	else {	//当てはまらない(押されてない、または押し続けている場合)
 		AttackFlg = false;	//叩かない
 	}
-	CurrentClickFlg = NextClickFlg;	//カレントを更新
 }
 void Player::DrawPlayer()
 {
