@@ -12,6 +12,7 @@
 
 
 SCENE_ID sceneID;
+int Score;
 
 //設定フレームレート (60FPS)
 #define FRAME_RATE (60)
@@ -145,6 +146,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 				play.InitPlay();
 				enemy.InitEnemy();
+				Score = 0;
 				sceneID = SCENE_LOOP_PLAY;
 			}
 				break;
