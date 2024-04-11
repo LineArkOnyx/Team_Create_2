@@ -154,8 +154,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			case SCENE_LOOP_PLAY:
 			{
 				play.StepPlay();
+				enemy.Enemy_Hit_Hanmmer();
 				//‰º•`‰æ
 				play.DrawPlay();
+				enemy.DrawEnemy();
 
 				if (IsKeyPush(KEY_INPUT_SPACE)) {
 					sceneID = SCENE_FIN_PLAY;

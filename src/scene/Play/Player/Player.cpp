@@ -4,6 +4,7 @@
 Player player;
 Player::Player()
 {
+	PlayerPosH = 8, PlayerPosW = 8;//HとWを初期化^\^
 	PlayerPosX = PlayerPosY = 0;	//プレイヤーの座標
 	PlayerIdleHndl = PlayerAttackHndl = 0;	//プレイヤーの画像ハンドル
 	CurrentClickFlg = NextClickFlg = 0;//左クリックされているかを感知する
@@ -63,4 +64,12 @@ int Player::GetPlayerPosX()	//座標取得
 int Player::GetPlayerPosY()	//座標取得
 {
 	return PlayerPosY;
+}
+int Player::GetPlayerPosH()
+{
+	return PlayerPosH;
+}
+int Player::GetPlayerPosW()
+{
+	return PlayerPosW;
 }

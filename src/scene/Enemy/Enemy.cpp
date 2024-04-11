@@ -7,14 +7,15 @@
 Enemy enemy;
 void Enemy::InitEnemy()
 {
-	x = 100;
-	y = 100;
+	x = 500;
+	y = 400;
+	h = 16;
+	w = 16;
 
 	IsUse = false;
 }
 void Enemy::Stepenemy()
 {
-	Enemy::DrawEnemy();
 }
 void Enemy::DrawEnemy()
 {
@@ -22,5 +23,10 @@ void Enemy::DrawEnemy()
 }
 void Enemy::Enemy_Hit_Hanmmer()
 {
-	Collision::IsHitRect(x,y,h,w, player.)
+	DrawBox(x, y, x + h, y + w,GetColor(255,255,255),true);
+	DrawBox(player.GetPlayerPosX(), player.GetPlayerPosY(), player.GetPlayerPosX() + player.GetPlayerPosH(), player.GetPlayerPosY() + player.GetPlayerPosW(), GetColor(255, 255, 255), true);
+	if (Collision::IsHitRect(x, y, h, w, player.GetPlayerPosX(), player.GetPlayerPosY(), player.GetPlayerPosH(), player.GetPlayerPosW()))
+	{
+		DrawFormatString(100, 100, GetColor(255, 255, 255), "ƒqƒbƒg");
+	}
 }
