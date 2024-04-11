@@ -36,7 +36,10 @@ void Title::InitTitle()
 }
 void Title::StepTitle()
 {
-	
+	if (CheckHitKey(KEY_INPUT_SPACE) == 1)
+	{
+		
+	}
 }
 void Title::DrawTitle()
 {
