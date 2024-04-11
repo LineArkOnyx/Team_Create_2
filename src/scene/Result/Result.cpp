@@ -2,11 +2,7 @@
 
 #define RESULT_PATH			"data/ResultImage/結果発表.png"
 #define SCORE_PATH			"data/ResultImage/スコア.png"
-<<<<<<< Updated upstream
-#define MOLE_PATH			"data/ResultImage/スコア.png"
-=======
 #define MOLE_PATH			"data/ResultImage/もぐらを叩いた数.png"
->>>>>>> Stashed changes
 
 Result::Result()
 {

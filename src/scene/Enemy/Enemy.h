@@ -4,7 +4,7 @@
 class Enemy
 {
 private:
-	int x, y, h, w, handle;
+	int x[2]; , y, h, w, handle;
 	bool IsUse;
 public:
 	void InitEnemy();
