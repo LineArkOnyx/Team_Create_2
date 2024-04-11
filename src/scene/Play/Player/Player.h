@@ -22,3 +22,5 @@ private:
 	bool AttackFlg;	//ƒ‚ƒOƒ‰‚ğ’@‚­ƒtƒ‰ƒO
 
 };
+
+extern Player player;

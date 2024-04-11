@@ -16,5 +16,5 @@ public:
 	//
 	void EnemyHitHammer();
 private:
-	Player player;
+	
 };

@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "../../../Common.h"
 
+Player player;
 Player::Player()
 {
 	PlayerPosX = PlayerPosY = 0;	//プレイヤーの座標
