@@ -1,6 +1,7 @@
 #pragma once
 #include "DxLib.h"
 #include "Player/Player.h"
+#include "../../Collision/Collision.h"
 
 class Play
 {

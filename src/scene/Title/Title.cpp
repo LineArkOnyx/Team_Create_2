@@ -1,9 +1,9 @@
 #include "Title.h"
 
 
-#define TITLE_PATH				"../data/TitleImage/Mole hit.png"
-#define TITLE_BUTTON_PATH		"../data/TitleImage/PleaseClick.png"
-#define TITLE_HAMMER_PATH		"../data/TitleImage/hanma.png"
+#define TITLE_PATH				"data/TitleImage/Mole hit.png"
+#define TITLE_BUTTON_PATH		"data/TitleImage/PleaseClick.png"
+#define TITLE_HAMMER_PATH		"data/TitleImage/hanma.png"
 
 Title::Title() 
 {

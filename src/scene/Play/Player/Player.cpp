@@ -26,10 +26,10 @@ void Player::StepPlayer()
 	NextClickFlg = GetMouseInput() & MOUSE_INPUT_LEFT;//左クリックを検知
 
 	if (NextClickFlg != 0 && CurrentClickFlg == 0){	// 今フレームで押されているかつ前フレームで押されていない
-		AttackFlg = true;//叩く
+		AttackFlg = true;	//叩く
 	}
 	else {	//当てはまらない(押されてない、または押し続けている場合)
-		AttackFlg = false;//叩かない
+		AttackFlg = false;	//叩かない
 	}
 	CurrentClickFlg = NextClickFlg;	//カレントを更新
 }
@@ -41,7 +41,7 @@ void Player::DrawPlayer()
 	else {
 		DrawGraph(PlayerPosX, PlayerPosY, PlayerIdleHndl, true);	//待機画像表示
 	}
-	DrawFormatString(0, 0, GetColor(255, 255, 0), "X : %d Y : %d\nclick C: %d N: %d\n",PlayerPosX,PlayerPosY,CurrentClickFlg,NextClickFlg);
+	DrawFormatString(0, 0, GetColor(255, 255, 0), "X : %d Y : %d\nclick C: %d N: %d\nATK : %d",PlayerPosX,PlayerPosY,CurrentClickFlg,NextClickFlg, AttackFlg);
 }
 void Player::FinPlayer()
 {

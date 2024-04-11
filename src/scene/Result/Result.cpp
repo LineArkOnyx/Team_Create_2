@@ -1,8 +1,8 @@
 #include "Result.h"
 
-#define RESULT_PATH			"../data/ResultImage/結果発表.png"
-#define SCORE_PATH			"../data/ResultImage/スコア.png"
-#define MOLE_PATH			"../data/ResultImage/スコア.png"
+#define RESULT_PATH			"data/ResultImage/結果発表.png"
+#define SCORE_PATH			"data/ResultImage/スコア.png"
+#define MOLE_PATH			"data/ResultImage/スコア.png"
 
 Result::Result()
 {
