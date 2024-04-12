@@ -43,6 +43,9 @@ void Result::DrawResult()
 	DrawGraph(0, 0, ResultHndl, true);
 	DrawGraph(Score_X, Score_Y, ScoreHndl, true);
 	DrawGraph(Mole_X, Mole_Y, MoleHndl, true);
+
+	DrawFormatString(700, 290, GetColor(255, 127, 255), "%d", Score);
+	DrawFormatString(700, 435, GetColor(255, 127, 255), "%d", ClickCount);
 }
 void Result::FinResult() 
 {
