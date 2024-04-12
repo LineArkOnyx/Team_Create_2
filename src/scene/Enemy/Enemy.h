@@ -1,10 +1,13 @@
 #pragma once
 #include"DxLib.h"
 #include"iostream"
+
+#define ENEMY_MAX_NUM (2)
+
 class Enemy
 {
 private:
-	int x[2]; , y, h, w, handle;
+	int x[ENEMY_MAX_NUM], y[ENEMY_MAX_NUM], h, w, handle;
 	bool IsUse;
 public:
 	void InitEnemy();
