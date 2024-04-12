@@ -13,6 +13,7 @@
 
 SCENE_ID sceneID;
 int Score;
+int ClickCount;
 
 //設定フレームレート (60FPS)
 #define FRAME_RATE (60)
@@ -147,6 +148,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				play.InitPlay();
 				enemy.InitEnemy();
 				Score = 0;
+				ClickCount = 0;
 				sceneID = SCENE_LOOP_PLAY;
 			}
 				break;
@@ -154,10 +156,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			case SCENE_LOOP_PLAY:
 			{
 				play.StepPlay();
-				enemy.Enemy_Hit_Hanmmer();
+				enemy.Stepenemy();
 				//下描画
-				play.DrawPlay();
 				enemy.DrawEnemy();
+				play.DrawPlay();
 
 				if (IsKeyPush(KEY_INPUT_SPACE)) {
 					sceneID = SCENE_FIN_PLAY;

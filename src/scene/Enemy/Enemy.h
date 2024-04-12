@@ -2,7 +2,7 @@
 #include"DxLib.h"
 #include"iostream"
 
-#define ENEMY_MAX_NUM (2)
+#define ENEMY_MAX_NUM (3)
 
 class Enemy
 {

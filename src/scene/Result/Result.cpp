@@ -22,6 +22,8 @@ Result::~Result()
 }
 void Result::InitResult()
 {
+	Rate = Score / ClickCount;
+
 	ResultHndl = LoadGraph(RESULT_PATH);
 	ScoreHndl = LoadGraph(SCORE_PATH);
 	MoleHndl = LoadGraph(MOLE_PATH);

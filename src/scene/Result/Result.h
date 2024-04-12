@@ -1,6 +1,7 @@
 #pragma once
 
 #include "DxLib.h"
+#include "../../Common.h"
 
 class Result
 {
@@ -12,6 +13,7 @@ public:
 	void DrawResult();
 	void FinResult();
 private:
+	int Rate; //キルレート (スコア / クリック回数)
 
 	int ResultHndl;
 	int ScoreHndl;

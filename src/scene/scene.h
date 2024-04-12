@@ -19,4 +19,4 @@ enum SCENE_ID
 	SCENE_FIN_RESULT,
 };
 
-
+extern SCENE_ID sceneID;
