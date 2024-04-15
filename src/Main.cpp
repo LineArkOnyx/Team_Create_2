@@ -64,7 +64,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	Result result;
 
 	sceneID = SCENE_INIT_TITLE;
-	
+	int SE_result = 0;
+	int SE_space = 0;
+	int SE_click = 0;
+
+	SE_result = LoadSoundMem(SE_RESULT_);
+	SE_space = LoadSoundMem(SE_INPUT_SPASE);
+	SE_click = LoadSoundMem(SE_INPUT_CLICK);
 	//ì¸óÕêßå‰èâä˙âª
 	InitInput();
 
@@ -161,9 +167,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				enemy.DrawEnemy();
 				play.DrawPlay();
 
-				if (IsKeyPush(KEY_INPUT_SPACE)) {
-					sceneID = SCENE_FIN_PLAY;
-				}
+				
 			}
 				break;
 
@@ -177,6 +181,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 			case SCENE_INIT_RESULT:
 			{
+				PlaySoundMem(SE_result, DX_PLAYTYPE_BACK);
 				result.InitResult();
 
 				sceneID = SCENE_LOOP_RESULT;
@@ -208,6 +213,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 			}
 
+			if (IsKeyPush(KEY_INPUT_SPACE)) {
+				PlaySoundMem(SE_space, DX_PLAYTYPE_BACK);
+			}
+			if ((GetMouseInput() & MOUSE_INPUT_LEFT) != 0 && player.GetPlayerAttack())
+			{
+				PlaySoundMem(SE_click, DX_PLAYTYPE_BACK);
+			}
+
 			//-----------------------------------------
 
 			//FPSåvéZ
@@ -228,7 +241,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//-----------------------------------------
 	//ç≈å„Ç…ÇPâÒÇæÇØÇ‚ÇÈèàóùÇÇ±Ç±Ç…èëÇ≠
 
-
+	DeleteSoundMem(SE_result);
+	DeleteSoundMem(SE_space);
+	DeleteSoundMem(SE_click);
 	//-----------------------------------------
 	//DXÉâÉCÉuÉâÉäÇÃå„èàóù
 	DxLib_End();
